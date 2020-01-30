@@ -7,8 +7,8 @@
   much easier, but it is possible to record one sequence while playing
   another. Playback is via the A3 knob, or as long as a HIGH is received
   on the jack. Sequences can be selected via knob or CV.
-
 */
+
 //
 // Knob A0: (record mode ) currently play and record
 // Knob A1: note length
@@ -24,7 +24,6 @@
 // A5: Record CV In (leave attenuator open, accurate but halves note range)
 // 13 and 11: 
 // 8 bits: displays step length in record mode. (todo: show seq number)
-
 
 // OPTIONS:
 #define GLOBAL_TRANSPOSE 0
@@ -72,7 +71,6 @@ int gateOutState = LOW;
 
 // Clock Output
 int clockOutState = LOW;
-
 
 int trigTime = 25; // 25ms trigger
 int activeMode = PLAYBACK;
@@ -274,6 +272,14 @@ void loop() {
 void clockInRising(){
   clockIn = HIGH;
 }
+
+
+
+
+// --------------------
+// All code below this point taken from Darwin Grosse's 20 Objects (https://github.com/darwingrosse/ArdCore-Code/)
+//
+// --------------------
 
 //  dacOutput(byte) - deal with the DAC output
 //  -----------------------------------------
