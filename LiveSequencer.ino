@@ -1,9 +1,5 @@
 #include <EEPROM.h>
 
-// TODO: separate play and record knobs!
-// Safe: completely works before adding separate play and record modes.
-
-
 // Ryan Live Sequencer Sketch
 /*
   Allows storage and playback of four sequences of 64 notes. Each
@@ -29,40 +25,14 @@
 // 13 and 11: 
 // 8 bits: displays step length in record mode. (todo: show seq number)
 
-/*
-Todo: 
-
-- flash sequence number on LEDs in record mode.
-- memory: can we do 8 sequences now? They're easier to select now.
-- it pauses while saving, any way around that?
-  - fixed sequence length, write each note as it happens
-  - is that better?
-  - OR only write notes to EEPROM if not playing.
-- play and record are separate controls TICK
-  - echo notes in record-only mode
-  - allow recording of other seqs while playing
-  - 
-  
-- clean up code: it's probably a mess after all the edits.
-
-- implement global tranpose: changing sequence doesn't reset tranpose.
-- implement full range: CV in needs to be attenuated but full kb range is possible
-- gate length: worth thinking about? Maybe? Half length of note?
-- avoid using delay() - not that important, it's only in rec mode
-
-*/
 
 // OPTIONS:
 #define GLOBAL_TRANSPOSE 0
 #define FULL_RANGE 0
-
-
- #define PLAYBACK 0
- #define RECORD 1
+#define PLAYBACK 0
+#define RECORD 1
 #define PITCH 0
 #define LENGTH 1
-
-
 
 // Template for useful naming of ports:
 const int a0 = 0;
